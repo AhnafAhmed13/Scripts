@@ -1,4 +1,3 @@
-
 # Mirror to iPad
 
 I broke my macbook screen (again! 😭). But I didn't wanna replace the screen this time. I already have a monitor at home so I don't really have a problem as long as I'm home. However, the problem starts as soon as I step outisde. I'm cooked if I don't have access to a monitor! 🫠
