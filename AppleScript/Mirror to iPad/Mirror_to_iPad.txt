@@ -1,0 +1,30 @@
+-- Mirror to iPad
+
+set tabPresses to 3
+set tabDelay to 0.2
+
+delay 1
+tell application "System Events"
+	tell application process "ControlCenter"
+		tell menu bar 1
+			click (UI elements whose description is "Control Center")
+		end tell
+		
+		delay 1
+		tell window "Control Center"
+			perform action 1 of button 2 of group 1 -- Screen Mirroring
+		end tell
+	end tell
+end tell
+
+-- Wait for dialog to load
+delay 1.5
+
+-- Simulate: Tab x N → Space
+tell application "System Events"
+	repeat tabPresses times
+		key code 48 -- Tab key
+		delay tabDelay
+	end repeat
+	key code 49 -- Space (to select)
+end tell
