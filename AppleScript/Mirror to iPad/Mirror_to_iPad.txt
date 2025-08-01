@@ -3,7 +3,22 @@
 set tabPresses to 3
 set tabDelay to 0.2
 
-delay 1
+delay 2
+
+-- Turn on full keyboard access
+tell application "System Events"
+	key down command
+	key down option
+	delay 0.1
+	key code 96 -- F5
+	delay 0.1
+	key up option
+	key up command
+end tell
+
+delay 2
+
+-- Simulate screen mirroring
 tell application "System Events"
 	tell application process "ControlCenter"
 		tell menu bar 1
@@ -17,8 +32,7 @@ tell application "System Events"
 	end tell
 end tell
 
--- Wait for dialog to load
-delay 1.5
+delay 2
 
 -- Simulate: Tab x N → Space
 tell application "System Events"
@@ -27,4 +41,17 @@ tell application "System Events"
 		delay tabDelay
 	end repeat
 	key code 49 -- Space (to select)
+end tell
+
+delay 2
+
+-- Turn off full keyboard access
+tell application "System Events"
+	key down command
+	key down option
+	delay 0.1
+	key code 96 -- F5
+	delay 0.1
+	key up option
+	key up command
 end tell
